@@ -57,7 +57,7 @@ body {
     margin-left: 20px;
     margin-top: 20px;
     height: 175px;
-    transition-duration: 1000ms;
+    
 
 
 }
@@ -74,7 +74,12 @@ body {
 
 }
 
-
+span{
+    background-color: #ffa31a;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+}
 
 
 
@@ -175,19 +180,18 @@ body {
     }
 
     .gimg {
-        height: 25%;
+        height: 23%;
         position: absolute;
         float: left;
-        left: 10%;
-
-        height: 150px;
-
-
+        left: 8%;
+        margin-left: 0px;
+        margin-top: 20px;
     }
+    
 
     .containt {
         position: absolute;
-        left: 48%;
+        left: 45%;
     }
 
     .names {
@@ -200,14 +204,15 @@ body {
     #anvith {
         height: 220px;
         margin-left: 5%;
-        width: 90vw
+        width: 90vw;
+    
     }
 
     .gimg1 {
         height: 25%;
         position: absolute;
         float: left;
-
+        margin-left: 0px;
         left: 55%;
         height: 150px;
 
@@ -217,8 +222,9 @@ body {
     .containt1 {
         position: absolute;
         left: 8%;
+        margin-left: 0px;
     }
-
+    
    
 
     
