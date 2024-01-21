@@ -11,8 +11,11 @@ body {
     align-content: center;
 
 }
-
+.con{
+    height: 600px;
+}
 .grp {
+    border-radius: 10px;
     top: 10px;
     height: 80px;
     width: 80px;
@@ -155,7 +158,7 @@ span{
 
 @media(max-width:1000px) {
     .con{
-        height: 450px;
+        height: 400px;
     }
     .grp {
         height: 80px;
@@ -171,12 +174,15 @@ span{
     }
 
     .mainimg {
-        height: 400px;
+        height: 300px;
         width: 90vw;
         border-radius: 20px;
         margin-top: 30px;
 
 
+    }
+    .mainimg:hover{
+        rotate: 0deg;
     }
 
     .gimg {
