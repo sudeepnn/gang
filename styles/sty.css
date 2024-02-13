@@ -48,7 +48,20 @@ body {
     transition-duration: 1000ms;
     z-index: 3;
 }
-
+.navigators{
+    
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    gap: 30px;
+    color: white;
+}
+h3:hover{
+    cursor: pointer;
+}
 .cloud:hover {
     transform: translateX(50px);
 }
@@ -60,9 +73,6 @@ body {
     margin-left: 20px;
     margin-top: 20px;
     height: 175px;
-    
-
-
 }
 .gimg1 {
     position: absolute;
@@ -84,7 +94,11 @@ span{
     color: black;
 }
 
-
+a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
 
 .containt1 {
     position: absolute;
@@ -133,6 +147,7 @@ span{
     top: 40px;
 }
 .org{
+    color: black;
     width: fit-content;
     border-radius: 5px;
     padding: 10px;
@@ -145,6 +160,7 @@ span{
 .each{
     border-radius: 10px  ;
     background-color: #292929;
+    
     
 }
 .containt {
@@ -186,7 +202,7 @@ span{
     }
 
     .gimg {
-        height: 23%;
+        height: 19%;
         position: absolute;
         float: left;
         left: 8%;
@@ -215,7 +231,7 @@ span{
     }
 
     .gimg1 {
-        height: 23%;
+        height: 18%;
         position: absolute;
         float: left;
         margin-left: 0px;
@@ -240,4 +256,154 @@ span{
         left: 80%;
         top: 40px;
     }
+    .navigators{
+        height: 100px;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+        
+        gap: 20px;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 5;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+    .modal-content {
+        
+        width: 80%;
+    
+    }
+   
+    .close {
+        color: #000000;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+   
+}
+@media (min-width: 1000px) {
+    #content {
+        width: 40%; /* Set the width to 50% for screens wider than 1000px */
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    border-radius: 10px;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 800px;
+    height: 250px;
+}
+#imageForm label{
+    font-size: 20px;
+}
+#imageForm input[type="file"] {
+    display: none;
+}
+#imageForm .custom-file-input {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #ffa31a;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    border: 1px solid #888;
+}
+.modal-content button{
+    margin-top: 20px;
+    background: linear-gradient(to right, #292929 50%, #ffa31a 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+    height: 35px;
+    width: 100px;
+    color: white;
+    font-size: 18px;
+    background-color: #ffa31a;
+    border-radius: 5px;
+}
+.modal-content button:hover{
+    cursor: pointer;
+    background-position: -100% 0;
+}
+.upload_details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+/* Style for the close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Style the image preview container */
+#imagePreview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Style the image preview itself */
+#imagePreview img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+}
+#loadingOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#loadingIndicator {
+    
+    font-size: 30px;
+    color: #fff;
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gang V!!</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favi/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favi/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favi/favicon-16x16.png">
+  <link rel="manifest" href="favi/site.webmanifest">
+  <link rel="mask-icon" href="favi/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery img {
+            margin-top: 10px;
+            width: 90%;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="styles/sty.css">
+</head>
+<body>
+    <div class="top">
+        <img class="grp" src="imgaes/Gang V11.png" alt="">
+        <h2 style="float: right; right: 20px;position: relative;color: white;"><a href="index.html">Home</a></h2>
+       
+      </div>
+<div class="gallery" id="imageGallery"></div>
+
+<script src="https://cdn.jsdelivr.net/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/packery/2.1.2/packery.pkgd.min.js"></script>
+<script>
+    // Fetch image URLs from the server
+    async function fetchImageUrls() {
+        try {
+            const response = await fetch('https://gang-api.onrender.com/');
+            const imageUrls = await response.json();
+            return imageUrls;
+        } catch (error) {
+            console.error('Error fetching image URLs:', error.message);
+            return [];
+        }
+    }
+
+    // Load and display images with lazy loading
+    async function loadImagesWithMasonry() {
+        const imageGallery = document.getElementById('imageGallery');
+        const imageUrls = await fetchImageUrls();
+
+        imageUrls.forEach(url => {
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = 'Gallery Image';
+            img.loading = 'lazy'; // Enable lazy loading
+
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('gallery-item');
+            imageContainer.appendChild(img);
+
+            imageGallery.appendChild(imageContainer);
+        });
+
+        // Initialize Masonry
+        const masonry = new Packery('.gallery', {
+            itemSelector: '.gallery-item',
+            gutter: 10, // Adjust as needed
+        });
+    }
+
+    // Load images with Masonry when the page is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        loadImagesWithMasonry();
+    });
+</script>
+
+</body>
+</html>

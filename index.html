@@ -4,22 +4,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gang</title>
+  <title>Gang V!!</title>
   <link rel="stylesheet" href="styles/sty.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="180x180" href="favi/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favi/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favi/favicon-16x16.png">
+  <link rel="manifest" href="favi/site.webmanifest">
+  <link rel="mask-icon" href="favi/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
   <div class="top">
     <img class="grp" src="imgaes/Gang V11.png" alt="">
     <img src="imgaes/22597 (1).png" alt="" class="cloud">
+    <div class="navigators"><h3><a href="gallary.html">Gallery</a></h3> <h3 onclick="openModal()">Upload</h3></div>
   </div>
+  <div id="uploadModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Upload Photo</h2>
+        <div class="upload_details">
+          <form id="imageForm" enctype="multipart/form-data">
+            <label class="custom-file-input" for="photo">Choose a photo:</label>
+            <input id="photo" type="file" name="photo" accept="image/*"  required onchange="previewImage(event)">
+        </form>
+        <div id="imagePreview"></div>
+        </div>
+        <button type="submit" onclick="uploadImage()">Upload</button>
+        <div id="loadingOverlay">
+          <div id="loadingIndicator">Uploading...</div>
+      </div>
+        
+    </div>
+</div>
   <div class="con" style=" color: azure;">
     <img class="mainimg" src="imgaes/DSC_0120.jpg" alt="">
 
@@ -31,7 +51,7 @@
   <div class="each" id="anvith" style="color: azure; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
     
     <div ><img class="gimg" src="imgaes/anvith.png" alt="">
-      <div class="containt">
+      <div  class="containt">
         <h3> Anvith </h3>
         <p class="para">Place: Madikeri <br> Contact: 9741860308 <br> </p>
         <div class="org">
@@ -214,5 +234,6 @@
       <a href="https://www.linkedin.com/in/sudeep-naik-9819b821a"><img class="doc" src="imgaes/linkedin.png" alt=""></a></div>
   </div>
 </body>
+<script src="code.js"></script>
 
 </html>
